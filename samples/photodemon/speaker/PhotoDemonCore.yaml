@@ -1,0 +1,28 @@
+speaker:
+  name: PhotoDemonCore
+  summary: "核心啟動與配置管理模組"
+  io:
+    inputs:
+      - "啟動參數"
+      - "設定檔路徑"
+    outputs:
+      - "初始化狀態"
+  dependencies:
+    db_tables: []
+    apis:
+      - "Windows GDI+"
+    files:
+      - "Config/PhotoDemon.ini"
+  flow:
+    steps:
+      - id: 1
+        desc: "載入設定與初始化流程"
+  errors:
+    - code: "PD-ERR-001"
+      desc: "初始化失敗"
+  performance:
+    notes: "避免同步 I/O"
+  examples:
+    - title: "示例"
+      code: |
+        ' TODO

@@ -1,0 +1,22 @@
+schema:
+  name: string
+  summary: string
+  io:
+    inputs: array
+    outputs: array
+  dependencies:
+    db_tables: array
+    apis: array
+    files: array
+  flow:
+    steps:
+      - id: number
+        desc: string
+  errors:
+    - code: string
+      desc: string
+  performance:
+    notes: string
+  examples:
+    - title: string
+      code: string

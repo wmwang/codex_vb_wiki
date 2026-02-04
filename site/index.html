@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Index</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>VB Deep Wiki - PhotoDemon</h1>
+    <nav>
+      <a href="index.html">Index</a>
+    </nav>
+  </header>
+  <main>
+    
+<div class="search">
+  <input type="search" id="search" placeholder="搜尋模組..." />
+</div>
+<div id="results">
+  <div class="card"><h3>PhotoDemonCore</h3><p>## 用途</p><a href="PhotoDemonCore.html">Read more</a></div>
+<div class="card"><h3>ExportEngine</h3><p>## 用途</p><a href="ExportEngine.html">Read more</a></div>
+</div>
+
+  </main>
+  
+<script>
+fetch('index.json')
+  .then(res => res.json())
+  .then(data => {
+    const input = document.getElementById('search');
+    const results = document.getElementById('results');
+    const render = items => {
+      results.innerHTML = items.map(item => `
+        <div class="card">
+          <h3>${item.title}</h3>
+          <p>${item.summary || ''}</p>
+          <a href="${item.file}">Read more</a>
+        </div>
+      `).join('');
+    };
+    render(data);
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase();
+      render(data.filter(item => item.title.toLowerCase().includes(q) || (item.summary || '').toLowerCase().includes(q)));
+    });
+  });
+</script>
+
+</body>
+</html>

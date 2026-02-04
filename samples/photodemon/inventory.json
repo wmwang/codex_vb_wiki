@@ -1,0 +1,14 @@
+{
+  "inventory": [
+    {
+      "file": "Modules/Core.bas",
+      "module": "PhotoDemonCore",
+      "functions": ["LoadConfig", "InitializeGraphicsCore", "Shutdown"]
+    },
+    {
+      "file": "Modules/Export.bas",
+      "module": "ExportEngine",
+      "functions": ["ExportImage", "ValidateFormat", "WriteMetadata"]
+    }
+  ]
+}
