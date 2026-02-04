@@ -1,0 +1,28 @@
+speaker:
+  name: ExportEngine
+  summary: "影像匯出處理模組"
+  io:
+    inputs:
+      - "輸入影像"
+      - "輸出格式"
+    outputs:
+      - "匯出檔案"
+  dependencies:
+    db_tables: []
+    apis:
+      - "檔案系統"
+    files:
+      - "Exports/*.png"
+  flow:
+    steps:
+      - id: 1
+        desc: "載入設定與初始化流程"
+  errors:
+    - code: "PD-ERR-001"
+      desc: "初始化失敗"
+  performance:
+    notes: "避免同步 I/O"
+  examples:
+    - title: "示例"
+      code: |
+        ' TODO

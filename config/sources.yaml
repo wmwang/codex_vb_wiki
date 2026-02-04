@@ -1,0 +1,15 @@
+sources:
+  - name: PhotoDemon
+    type: git
+    url: https://github.com/tannerhelland/PhotoDemon
+    default_branch: master
+    include:
+      - "**/*.vb"
+      - "**/*.bas"
+      - "**/*.frm"
+    notes:
+      - "用於示範 Deep Wiki 抽取流程"
+
+storage:
+  inventory_output: data/inventory.json
+  speaker_output: speaker/examples/photodemon_core.yaml

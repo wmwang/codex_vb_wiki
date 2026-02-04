@@ -1,0 +1,31 @@
+speaker:
+  name: PhotoDemon.Core
+  summary: "核心啟動與配置管理模組（示例）。"
+  io:
+    inputs:
+      - "啟動參數"
+      - "配置檔路徑"
+    outputs:
+      - "初始化狀態"
+  dependencies:
+    db_tables: []
+    apis:
+      - "Windows GDI+"
+    files:
+      - "Config/PhotoDemon.ini"
+  flow:
+    steps:
+      - id: 1
+        desc: "讀取設定檔並載入 UI/系統偏好。"
+      - id: 2
+        desc: "初始化影像處理核心與工作執行緒。"
+  errors:
+    - code: "PD-INIT-001"
+      desc: "設定檔無法讀取或格式錯誤。"
+  performance:
+    notes: "啟動階段需避免大量同步 I/O。"
+  examples:
+    - title: "初始化流程"
+      code: |
+        Call LoadConfig("Config/PhotoDemon.ini")
+        Call InitializeGraphicsCore()

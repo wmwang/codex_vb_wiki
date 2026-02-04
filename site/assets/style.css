@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+header { background: #1f3a8a; color: #fff; padding: 1rem 2rem; }
+nav a { color: #fff; margin-right: 1rem; text-decoration: none; }
+main { padding: 2rem; }
+.card { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.search { margin-bottom: 1rem; }
+input[type="search"] { padding: 0.5rem; width: 100%; max-width: 480px; }
+pre { background: #111827; color: #f9fafb; padding: 1rem; border-radius: 6px; overflow: auto; }
